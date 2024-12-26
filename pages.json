@@ -1,0 +1,186 @@
+{
+	"pages": [{
+			"path": "pages/login",
+			"navigationStyle": "custom",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/register",
+			"style": {
+				"navigationBarTitleText": "注册"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/search/index",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		},
+		{
+			"path": "pages/dataBorad/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/mine/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/mine/avatar/index",
+			"style": {
+				"navigationBarTitleText": "修改头像"
+			}
+		},
+		{
+			"path": "pages/mine/info/index",
+			"style": {
+				"navigationBarTitleText": "基础资料"
+			}
+		},
+		{
+			"path": "pages/mine/setting/index",
+			"style": {
+				"navigationBarTitleText": "应用设置"
+			}
+		},
+		{
+			"path": "pages/mine/help/index",
+			"style": {
+				"navigationBarTitleText": "常见问题"
+			}
+		},
+		{
+			"path": "pages/mine/team/index",
+			"style": {
+				"navigationBarTitleText": "团队管理"
+			}
+		},
+		{
+			"path": "pages/mine/negotiatePrice/index",
+			"style": {
+				"navigationBarTitleText": "议价审核"
+			}
+		},
+		{
+			"path": "pages/mine/negotiatePrice/details",
+			"style": {
+				"navigationBarTitleText": "议价审核详情"
+			}
+		},
+		{
+			"path": "pages/common/textview/index",
+			"style": {
+				"navigationBarTitleText": "浏览文本"
+			}
+		}
+	],
+	"subPackages": [{
+		"root": "pages/users",
+		"name": "users",
+		"pages": [{
+				"path": "proxyRegister/index",
+				"style": {
+					"navigationBarTitleText": "代客注册"
+				}
+			},
+			{
+				"path": "map/tencentMap",
+				"style": {
+					"navigationBarTitleText": "腾讯地图"
+				}
+			},
+			{
+				"path": "info/index",
+				"style": {
+					"navigationBarTitleText": "用户资料"
+				}
+			},
+			{
+				"path": "addContacts/index",
+				"style": {
+					"navigationBarTitleText": "添加联系人"
+				}
+			},
+			{
+				"path": "userDetails/index",
+				"style": {
+					"navigationBarTitleText": "客户详情"
+				}
+			},
+			{
+				"path": "followUp/index",
+				"style": {
+					"navigationBarTitleText": "写跟进"
+				}
+			},
+			{
+				"path": "map/index",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			},
+			{
+				"path": "map/location",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			},
+			{
+				"path": "addSalesProduct/index",
+				"style": {
+					"navigationBarTitleText": "添加销售商品"
+				}
+			},
+			{
+				"path": "addNegotiate/index",
+				"style": {
+					"navigationBarTitleText": "新建议价申请单"
+				}
+			},
+			{
+				"path": "negotiateHistory/index",
+				"style": {
+					"navigationBarTitleText": "议价申请历史"
+				}
+			}
+		]
+	}],
+	"tabBar": {
+		"color": "#000000",
+		"selectedColor": "#000000",
+		"borderStyle": "white",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/images/tabbar/home.png",
+			"selectedIconPath": "static/images/tabbar/home_.png",
+			"text": "客户管理"
+		}, {
+			"pagePath": "pages/dataBorad/index",
+			"iconPath": "static/images/tabbar/dataBorad.png",
+			"selectedIconPath": "static/images/tabbar/dataBorad_.png",
+			"text": "数据看板"
+		}, {
+			"pagePath": "pages/mine/index",
+			"iconPath": "static/images/tabbar/mine.png",
+			"selectedIconPath": "static/images/tabbar/mine_.png",
+			"text": "我的"
+		}]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "饭军师",
+		"navigationBarBackgroundColor": "#FFFFFF"
+	}
+}

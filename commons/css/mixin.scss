@@ -1,0 +1,21 @@
+@mixin bottomLine($width, $style: solid, $color: #eee) {
+	content: '';
+	position: absolute;
+	width: $width;
+	height: 1px;
+	border-bottom: 1px $style $color;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%) scaleY(.5);
+}
+
+@mixin topLine($width, $style: solid, $color: #eee) {
+	content: '';
+	position: absolute;
+	width: $width;
+	height: 1px;
+	border-bottom: 1px $style $color;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%) scaleY(.5);
+}

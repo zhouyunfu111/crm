@@ -1,0 +1,248 @@
+// $u-type-warning: red;//为黄色，代表警告之意。
+// $u-type-success: red;//为绿色，代表成功之意。
+// $u-type-error: red;//为红色，代表错误之意。
+// $u-type-info: red;//为灰色，代表一般信息之意。
+page {
+	height: 100%;
+	background-color: #F7F7F7;
+}
+.app-page {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	font-family: PingFang SC;
+}
+.app-body {
+	display: flex;
+	flex-direction: column;
+	// flex: 1;
+	// height: 0rpx;
+	// background-color: #F7F8FA;
+}
+
+.app-scroll {
+	// flex: 1;
+	// #ifndef H5
+	// height: 0;
+	// #endif
+	height: 100%;
+}
+/deep/.uni-scroll-view::-webkit-scrollbar{
+	display: none
+}
+.color-primary{
+	color: #FF920F !important;
+}
+.color-error{
+	color: #fa3534 !important;
+}
+.color-info{
+	color: #999;
+}
+.color-black {
+	color: #333;
+}
+.grid {
+	display: grid;
+}
+// 补丁样式
+@mixin ellipsis-n($line) {
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: $line;
+	/* autoprefixer: ignore next */
+	-webkit-box-orient: vertical;
+	word-break: break-all;
+}
+.ellipsis-1 {
+	@include ellipsis-n(1);
+}
+.ellipsis-2 {
+	@include ellipsis-n(2);
+}
+.ellipsis-3 {
+	@include ellipsis-n(3);
+}
+.app-wrap {
+	padding: 0rrpx 20rrpx;
+	display: flex;
+	flex-direction: column;
+}
+
+.flex {
+	display: flex;
+}
+.flex-row {
+	flex-direction: row;
+}
+.flex-column {
+	flex-direction: column;
+}
+.flex-center {
+	align-items: center;
+	justify-content: center;
+}
+.flex-align-center {
+	align-items: center;
+}
+.flex-align-end {
+	align-items: end;
+}
+.flex-justify-center {
+	justify-content: center;
+}
+.flex-wrap {
+	flex-wrap: wrap;
+}
+.flex-nowrap {
+	flex-wrap: nowrap;
+	white-space: nowrap;
+}
+.flex-shrink {
+	flex-shrink: 0;
+}
+.flex-row-end {
+	justify-content: flex-end;
+}
+.flex-row-between {
+	justify-content: space-between;
+}
+.flex-row-center {
+	justify-content: center;
+}
+
+.grid {
+	display: grid;
+}
+.width-full {
+	width: 100%;
+}
+
+.relative {
+	position: relative;
+}
+.absolute {
+	position: absolute;
+}
+.bold {
+	font-weight: bold !important;
+}
+.text-center {
+	text-align: center;
+}
+
+.riado-box {
+	width: 28rpx;
+	height: 28rpx;
+	border-radius: 50%;
+	border:2rpx solid #979797;
+	position: relative;
+	&.active {
+		border-color: #FF920F;
+		&::before {
+			width: 20rpx;
+			height: 20rpx;
+			background-color: #FF920F;
+			position: absolute;
+			display: block;
+			content: '';
+			border-radius: 50%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+	}
+}
+
+//去除uni默认样式
+/deep/ uni-swiper{
+	height: 100%;
+}
+
+//input placeholder默认颜色
+/deep/.uni-input-placeholder{
+	color: #CFCFCF;
+}
+
+// 定义flex等分
+@for $i from 0 through 12 {
+	.fjs-flex-#{$i} {
+		flex: $i !important;
+	}
+}
+
+// 定义字体(rpx)
+@for $i from 10 through 40 {
+	.fjs-font-#{$i} {
+		font-size: $i + rpx;
+	}
+}
+
+// 定义内外边距，历遍1-120
+@for $i from 0 through 120 {
+	// 只要双数和能被5除尽的数
+	@if $i % 2 == 0 or $i % 5 == 0 {
+		// 得出：fjs-margin-30或者fjs-m-30
+		.fjs-margin-#{$i}, .fjs-m-#{$i} {
+			margin: $i + rpx;
+		}
+
+		// 得出：fjs-padding-30或者fjs-p-30
+		.fjs-padding-#{$i}, .fjs-p-#{$i} {
+			padding: $i + rpx;
+		}
+
+		// 定义y轴外边距
+		.fjs-m-y-#{$i} {
+			margin-top: $i + rpx;
+			margin-bottom: $i + rpx;
+		}
+		// 定义X轴外边距
+		.fjs-m-x-#{$i} {
+			margin-left: $i + rpx;
+			margin-right: $i + rpx;
+		}
+
+
+    // 定义y轴内边距
+		.fjs-p-y-#{$i} {
+			padding-top: $i + rpx;
+			padding-bottom: $i + rpx;
+		}
+	  // 定义X轴内边距
+		.fjs-p-x-#{$i} {
+			padding-left: $i + rpx;
+			padding-right: $i + rpx;
+		}
+		
+		.fjs-gap-#{$i} {
+			gap: $i + rpx;
+		}
+
+		@each $short, $long in l left, t top, r right, b bottom {
+			// 缩写版，结果如： fjs-m-l-30
+			// 定义外边距
+			.fjs-m-#{$short}-#{$i} {
+				margin-#{$long}: $i + rpx;
+			}
+
+			// 定义内边距
+			.fjs-p-#{$short}-#{$i} {
+				padding-#{$long}: $i + rpx;
+			}
+
+			// 完整版，结果如：jw-margin-left-30
+			// 定义外边距
+			.fjs-margin-#{$long}-#{$i} {
+				margin-#{$long}: $i + rpx;
+			}
+
+			// 定义内边距
+			.fjs-padding-#{$long}-#{$i} {
+				padding-#{$long}: $i + rpx;
+			}
+			
+		}
+	}
+}
